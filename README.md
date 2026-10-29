@@ -10,4 +10,6 @@ Clicking on an airport will display various information like field elevation, ru
 
 Scenery stored outside your custom scenery folder is included when that folder is connected with a shortcut, a symbolic link, or a junction.
 
+Windows and Mac are both in this repository. Download [version 1.1](https://github.com/johnfxhayes/XPSceneryMap/releases/tag/1.1): `XPSceneryMap-1.1.zip` for Windows, and `XPSceneryMap-Mac-1.1.zip` for Mac.
+
 ![X-Plane Scenery Map](XpSceneryMapPreview%201.1.png)

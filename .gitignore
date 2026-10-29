@@ -5,5 +5,10 @@ build/
 config.json
 output/
 releases/
-mac/
 .DS_Store
+
+mac/1.1/.git/
+mac/1.1/.github/
+mac/1.1/README.md
+mac/1.1/XpSceneryMapPreview 1.1.png
+mac/artifacts/
