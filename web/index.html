@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>X-Plane Scenery Map</title>
+  <link rel="stylesheet" href="vendor/leaflet.css">
+  <link rel="stylesheet" href="style.css?v=37">
+</head>
+<body>
+  <aside>
+    <header>
+      <p class="eyebrow">X-Plane 12</p>
+      <h1>Custom Scenery</h1>
+      <div class="root-line">
+        <p id="root" class="root"></p>
+        <button id="update-root" type="button">Change</button>
+      </div>
+      <button id="rescan" type="button">Rescan scenery</button>
+    </header>
+    <label class="search">
+      <span class="visually-hidden">Search airports</span>
+      <input id="search" type="search" placeholder="Code, name, or pack" autocomplete="off">
+    </label>
+    <div class="filters" role="group" aria-label="Show">
+      <label>
+        <input class="visually-hidden" type="checkbox" name="kind" value="land" checked>
+        Land airports
+      </label>
+      <label>
+        <input class="visually-hidden" type="checkbox" name="kind" value="heli" checked>
+        Heliports
+      </label>
+      <label>
+        <input class="visually-hidden" type="checkbox" name="kind" value="sea" checked>
+        Seaports
+      </label>
+      <label>
+        <input class="visually-hidden" id="ortho" type="checkbox" name="layer" value="ortho" checked>
+        Ortho tiles
+      </label>
+      <label id="xpme-filter" hidden>
+        <input class="visually-hidden" id="xpme" type="checkbox" name="layer" value="xpme">
+        XPME
+      </label>
+    </div>
+    <section id="packages" class="packages">
+      <details open>
+        <summary>Packages <span id="packages-hidden"></span></summary>
+        <label class="search packages-search">
+          <span class="visually-hidden">Find a package</span>
+          <input id="package-search" type="search" placeholder="Find a package" autocomplete="off">
+        </label>
+        <ul id="package-list"></ul>
+        <button type="button" id="package-resize" class="package-resize" aria-label="Resize packages"></button>
+      </details>
+    </section>
+    <p id="status" class="status">Reading scenery…</p>
+    <ul id="list" class="list"></ul>
+    <section id="skipped" class="skipped" hidden></section>
+  </aside>
+  <div id="map"></div>
+  <button id="theme" type="button" class="theme-switch" aria-pressed="true" aria-label="Light mode">
+    <span class="theme-switch-knob" aria-hidden="true"></span>
+    <span class="theme-icon sun" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="16" height="16">
+        <circle cx="12" cy="12" r="4" fill="currentColor"></circle>
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2"></path>
+          <path d="M5.1 5.1l1.6 1.6M17.3 17.3l1.6 1.6M18.9 5.1l-1.6 1.6M6.7 17.3l-1.6 1.6"></path>
+        </g>
+      </svg>
+    </span>
+    <span class="theme-icon moon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="15" height="15">
+        <path fill="currentColor" d="M15.5 2.5a8.8 8.8 0 1 0 6 14.2A7.4 7.4 0 0 1 15.5 2.5z"></path>
+      </svg>
+    </span>
+  </button>
+  <dialog id="pack-changes" class="pack-changes" aria-labelledby="pack-changes-title">
+    <h2 id="pack-changes-title">Scenery packages changed</h2>
+    <p id="pack-changes-summary"></p>
+    <div id="pack-changes-body"></div>
+    <p id="pack-changes-error" hidden></p>
+    <button id="pack-changes-ok" type="button">Continue</button>
+  </dialog>
+  <script src="vendor/leaflet.js"></script>
+  <script id="hidden-packs" type="application/json">[]</script>
+  <script id="package-list-height" type="application/json">null</script>
+  <script src="app.js?v=38"></script>
+</body>
+</html>

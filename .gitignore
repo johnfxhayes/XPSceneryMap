@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+dist/
+build/
+config.json
+output/
+releases/
+mac/
+.DS_Store
