@@ -1,3 +1,5 @@
+https://forums.x-plane.org/files/file/101892-xp-scenery-map/
+
 XP Scenery Map is a tool that displays your custom airports on a global map.
 
 I came up with this program for myself as someone who has a lot of freeware/payware scenery and wanted an easy way to come up with flight ideas from one custom scenery to another.
